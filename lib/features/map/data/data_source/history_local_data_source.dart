@@ -4,6 +4,7 @@ import 'package:map_task/features/map/data/models/place_model.dart';
 class HistoryLocalDataSource {
 
 final box= Hive.box<PlaceModel>("placeBox");
+
   Future<void> addPlace(PlaceModel place)async{
 
 await box.add(place);
@@ -14,7 +15,7 @@ await box.add(place);
   }
 
  Future<void> deletPlace(int index)async{
- 
-   await box.delete(index);
+final key= box.keyAt(index);
+   await box.delete(key);
   }
 }

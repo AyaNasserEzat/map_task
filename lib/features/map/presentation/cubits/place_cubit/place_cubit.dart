@@ -1,8 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:map_task/features/map/data/data_source/history_local_data_source.dart';
 import 'package:map_task/features/map/data/models/place_model.dart';
+import 'package:map_task/features/map/data/repo/history_repo_impl.dart';
 
-import 'package:map_task/features/map/domain/repo/history_repo/history_repo_impl.dart';
+
 import 'package:map_task/features/map/domain/use_cases/add_place_use_case.dart';
 import 'package:map_task/features/map/domain/use_cases/delete_place_use_case.dart';
 import 'package:map_task/features/map/domain/use_cases/get_places_use_case.dart';
