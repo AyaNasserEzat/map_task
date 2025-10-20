@@ -13,7 +13,7 @@ class PlaceCubit extends Cubit<PlaceHistoryState> {
   PlaceCubit (): super (PlaceInit());
 
   Future<void> addPlace(PlaceModel place) async {
-    AddPlaceUseCase(
+    await AddPlaceUseCase(
       historyRepo: HistoryRepoImpl(
         historyLocalDataSource: HistoryLocalDataSource(),
       ),
@@ -24,7 +24,7 @@ class PlaceCubit extends Cubit<PlaceHistoryState> {
   }
 
   Future<void> deletPlace(int index) async {
-    DeletePlaceUseCase(
+   await DeletePlaceUseCase(
       historyRepo: HistoryRepoImpl(
         historyLocalDataSource: HistoryLocalDataSource(),
       )

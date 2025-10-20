@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+
 import 'package:map_task/features/map/data/models/place_model.dart';
 import 'package:map_task/features/map/presentation/cubits/place_cubit/place_cubit.dart';
 import 'package:map_task/features/map/presentation/cubits/place_cubit/place_state.dart';
-import 'package:map_task/features/map/presentation/cubits/search_cubit.dart';
 
 class HistoryScreen extends StatelessWidget {
   const HistoryScreen({super.key});
@@ -26,7 +25,8 @@ class HistoryScreen extends StatelessWidget {
                 child: ListView.separated(
                   itemCount: state.placeList.length,
                   itemBuilder: (context, index) {
-                    final PlaceModel place = state.placeList[index];
+                    final revesedIndex=state.placeList.length-1-index;
+                    final PlaceModel place = state.placeList[revesedIndex];
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: InkWell(
@@ -52,7 +52,7 @@ class HistoryScreen extends StatelessWidget {
                                 onTap: () {
                                   BlocProvider.of<PlaceCubit>(
                                     context,
-                                  ).deletPlace(index);
+                                  ).deletPlace(revesedIndex);
                                 },
                                 child: Icon(Icons.close, size: 20),
                               ),

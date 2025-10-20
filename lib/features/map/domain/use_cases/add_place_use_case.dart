@@ -7,6 +7,7 @@ final HistoryRepo historyRepo;
 
   AddPlaceUseCase({required this.historyRepo});
   Future<void> call(PlaceModel place){
+    
 return  historyRepo.addPlace(place);
   }
 }

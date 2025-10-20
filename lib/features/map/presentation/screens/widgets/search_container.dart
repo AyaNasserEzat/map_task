@@ -118,6 +118,8 @@ class _SearchedTextFieldState extends State<SearchedTextField> {
                             lon: place.lon,
                           ),
                         );
+                       
+                        
 
                         context.read<SearchCubit>().clearResults();
                         context.read<SearchCubit>().addMarker(place);
